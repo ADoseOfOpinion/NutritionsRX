@@ -1,0 +1,232 @@
+section {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+div {
+    
+    width: 125px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    font-family: "Montserrat", sans-serif;
+}
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: white;
+}   
+body {
+    background-color: rgb(240, 239, 226);
+}
+.lefthead {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    float: left;
+}
+.righthead {
+    width: 60%;
+    flex-direction: row;
+    display: flex;
+    padding: 10px;
+    height: 10%;
+    font-size: 15px;
+    color: red;
+    float: right;
+}
+.logo {
+    width: 90%;
+    height: auto;
+}
+.header{
+    padding: 20px;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
+a:visited {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: underline;
+    color: red;
+}
+h1 {
+    text-align: center;
+}
+.title {
+    background-color: white;
+}
+#leading {
+    color: gray;
+    
+}
+#about {
+    text-align: left;
+    font-size: 22px;
+    float: middle;
+    width: 50%;
+}
+.quote {
+    text-align: center;
+}
+.contacttext {
+    text-align: center;
+    float: middle;
+    font-size: 22px;
+    width: 50%;
+    padding-top: 30px;
+}
+
+.contactenglish {
+    font-size: 30px;
+}
+
+.form-control {
+    width: 600px;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #000000;
+}
+.contact-title, .contact-form {
+    text-align: center;
+    width: 500px;
+    text-transform: uppercase;
+    padding-top: 0px;
+    background-color: rgb(70, 167, 184);
+}
+.contactind {
+    text-align: left;
+    font-size: 15px;
+}
+.form {
+    width: 80%;
+}
+.form-control-submit {
+    background-color: rgb(238, 81, 81);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.calculatortext {
+    float: middle;
+    width: 50%;
+    text-align: left;
+    font-size: 20px;
+}
+.calculator {
+    background-color: red;
+    padding: 20px;
+}
+.chart {
+    width: 30%;
+    font-size: 20px;
+    text-align: center;
+    float: middle;
+}
+/*.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+*/
+
+.homepage {
+    width: 40%;
+    border: 0.5px dashed gray;
+}
+/*change fonts to match*/
+
+.details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+.detailsimage {
+    padding: 10px;
+    padding-right: 30px;
+    padding-top: 50px;
+    width: 20%;
+}
+.detailstext {
+    padding: 10px;
+    padding-top: 50px;
+    width: 40%;
+    height: 80%;
+}
+.pages {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.pagenumber {
+    padding: 10px;
+    text-align: center;
+    padding-right: 20px;
+}
+.blogpostimage {
+    text-align: center;
+    width: 50%;
+}
+.text {
+    text-align: center;
+    line-height: 1.5;
+}
+.blogformat {
+    width: 80%;
+    font-size: 20px;
+}
+.table {
+    text-align: center;
+    width: 100%;
+}
+.gallery {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 490px;
+}
+.samplemenu {
+    color: green;
+    width: 400px;
+    font-weight: 700;
+}
+.policy {
+    font-size: 30px;
+    width: 1000px;
+}
+.chinesetable {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+.chinesetable2 {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* use table.center to center tables */
+
+figcaption {
+    font-size: 15px;
+}
