@@ -128,8 +128,12 @@ h1 {
     font-size: 20px;
 }
 .calculator {
-    background-color: red;
     padding: 20px;
+    width: 500px;
+    border-style: dashed;
+    border-color: red;
+    border-width: 4px;
+    margin-bottom: 10px;
 }
 .chart {
     width: 30%;
@@ -229,4 +233,13 @@ table.center {
 
 figcaption {
     font-size: 15px;
+}
+.imperialcalculatorresult, .metriccalculatorresult {
+    width: 200px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.imperial-calculate, .metric-calculate {
+    margin-top: 10px;
+    background-color: gray;
 }

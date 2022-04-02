@@ -5,6 +5,7 @@
         <title>Nutrition Calculators | NutritionsRX </title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+KR:wght@700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "stylesheet.css">
+        <script src = "calculatormetric.js"></script>
     </head>
     <body>
         <header>
@@ -24,19 +25,21 @@
         </section>
         <h1 class = "title"><strong>Nutrition Calculators</strong></h1>
         </header>
-        <script src = "calculator.js"></script>
-       <h3 class = "text"> Calculator is WIP!</h3>
-        <!--<div class = "calculator">
-            <input name = "Imperial" type = "button" class = "imperial" placeholder = "Imperial" value = "Imperial">
-            <input name = "Metric" type = "button" class = "metric" placeholder = "Metric" value = "Metric">
-
-            <input class = "imperial-height" name = "Height" type = "number" placeholder = "Height (in)">
-            <input class = "metric-height" name = "Height" type = "number" placeholder = "Height (cm)">
-            <input class = "imperial-weight" name = "Weight" type = "number" placeholder = "Weight (lb)">
-            <input class = "metric-weight" name = "Weight" type = "number" placeholder = "Weight (kg)">
-            <button class = "calculate">Calculate</button>
+        
+        <div class = "pages">
+            <h3 class = "pagenumber">Metric</h3>
+            <h3 class = "pagenumber"><a href = "calculatorimperial.html"> Imperial </a></h3>
         </div>
-    -->
+       
+           
+       <div class = "calculator">
+            <h2>Calculate BMI (Metric Units)</h2>
+            <h3>Enter height and weight in centimeters and kilograms.</h3>
+            <input class = "metric-height" name = "Height" type = "number" placeholder = "Height (cm)">
+            <input class = "metric-weight" name = "Weight" type = "number" placeholder = "Weight (kg)">
+            <button class = "metric-calculate">Calculate</button>
+            <div class = "metriccalculatorresult"></div>
+       </div>
 
         <div class = "calculatortext">
             <p>Body Mass Index (BMI) is used to measure body fat. This measure is only used for adults. BMI calculation is based on how weight relates to height.</p>
