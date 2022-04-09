@@ -114,6 +114,8 @@ h1 {
 }
 .form {
     width: 80%;
+    position: relative;
+    right: 50px;
 }
 .form-control-submit {
     background-color: rgb(238, 81, 81);
@@ -243,3 +245,19 @@ figcaption {
     margin-top: 10px;
     background-color: gray;
 }
+.chartcalculator {
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    float: middle;
+    padding-right: 10px;
+}
+td {
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  
+  td:first-child {
+    padding-left:20px;
+    padding-right:0;
+  }
