@@ -261,3 +261,7 @@ td {
     padding-left:20px;
     padding-right:0;
   }
+
+video {
+    width: 800px;
+}
