@@ -265,3 +265,13 @@ td {
 video {
     width: 800px;
 }
+li {
+    margin-bottom: 10px;
+}
+
+.aboutimage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
