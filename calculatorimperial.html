@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="BMI Calculator - Calculate your Body Mass Index using imperial units">
         <title>Nutrition Calculators | NutritionsRX </title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+KR:wght@700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "stylesheet.css">
@@ -12,19 +14,25 @@
         <section>
                 <div class = "lefthead">
                     <div class = "header"><img class = "logo" src = "images/newlogo.jpg"></div>
-                    <div class = "header" id = "leading"><strong><h1>Leading a Life of Wellness</h1></strong></div>
                 </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class = "righthead">
                 <div class = "header"><a href = "index.html"><h1>Home</h1></a></div>
                 <div class = "header"><a href = "about.html"><h1>About</h1></a></div>
                 <div class = "header"><a href = "calculators.html"><h1>Nutrition Calculators</h1></a></div>
                 <div class = "header"><a href = "blogs.html"><h1>Blogposts</h1></a></div>
                 <div class = "header"><a href = "contact.html"><h1>Contact</h1></a></div>
-            
+                <div class = "header"><a href = "policy.html"><h1>Policy</h1></a></div>
+                <div class = "header"><a href = "https://nutritionsrx.clientsecure.me/" target = "_blank" class = "hero-button-nav">Schedule Appointment</a></div>
             </div>
                 
         </section>
-        <h1 class = "title"><strong>Nutrition Calculators</strong></h1>
+        <h1 class = "title">Nutrition Calculators</h1>
+        <img src = "images/otherheaderimage.jpg" alt="Nutrition calculators and tools" style = "width: 100%; height: auto;">
         </header>
         
         <div class = "pages">
@@ -82,6 +90,23 @@
         </table>
     </div>
     <footer>
+        <h2 class="footer-title">Leading a Life of Wellness</h2>
+        <div class="footer-info">
+            <div class="footer-section">
+                <h3>Phone</h3>
+                <p><a href="tel:267-368-9843">267-368-9843</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>2981 Welsh Rd, Suite 102 Philadelphia, PA 19152-1663</p>
+                <p>Virtual & In-Person Consultations</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                <p>Saturday: By Appointment</p>
+            </div>
+        </div>
         <section>
             
         <div class = "righthead">
@@ -98,5 +123,58 @@
     </section>
     <h4 class = "text">© 2024 Leading a Life of Wellness</h4>
     </footer>
+    <script>
+        // Mobile menu toggle
+        (function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const righthead = document.querySelector('.righthead');
+            const body = document.body;
+            
+            if (menuToggle && righthead) {
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    righthead.classList.toggle('mobile-menu-open');
+                    body.classList.toggle('menu-open');
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = righthead.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.classList.remove('active');
+                        righthead.classList.remove('mobile-menu-open');
+                        body.classList.remove('menu-open');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (righthead.classList.contains('mobile-menu-open') && 
+                        !righthead.contains(event.target) && 
+                        !menuToggle.contains(event.target)) {
+                        menuToggle.classList.remove('active');
+                        righthead.classList.remove('mobile-menu-open');
+                        body.classList.remove('menu-open');
+                    }
+                });
+            }
+        })();
+        
+        // Mark active navigation link
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.righthead a');
+            
+            navLinks.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                // Mark "Nutrition Calculators" as active for calculator pages
+                if (currentPage === 'calculatorimperial.html' && linkHref === 'calculators.html') {
+                    link.classList.add('nav-active');
+                } else if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                    link.classList.add('nav-active');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

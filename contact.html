@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Contact NutritionsRX - Schedule a nutrition consultation">
         <title>Contact | NutritionsRX </title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+KR:wght@700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "stylesheet.css">
@@ -10,40 +12,121 @@
         <header>
         <section>
                 <div class = "lefthead">
-                    <div class = "header"><img class = "logo" src = "images/newlogo.jpg"></div>
-                    <div class = "header" id = "leading"><strong><h1>Leading a Life of Wellness</h1></strong></div>
+                    <div class = "header"><a href = "index.html"><img class = "logo" src = "images/newlogo.jpg" alt="NutritionsRX Logo"></a></div>
                 </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class = "righthead">
                 <div class = "header"><a href = "index.html"><h1>Home</h1></a></div>
                 <div class = "header"><a href = "about.html"><h1>About</h1></a></div>
                 <div class = "header"><a href = "calculators.html"><h1>Nutrition Calculators</h1></a></div>
-                <div class = "videos"><a href = "blogs.html"><h1>Blogposts</h1></a></div>
+                <div class = "header"><a href = "blogs.html"><h1>Blogposts</h1></a></div>
                 <div class = "header"><a href = "contact.html"><h1>Contact</h1></a></div>
-            
+                <div class = "header"><a href = "policy.html"><h1>Policy</h1></a></div>
+                <div class = "header"><a href = "https://nutritionsrx.clientsecure.me/" target = "_blank" class = "hero-button-nav">Schedule Appointment</a></div>
             </div>
                 
         </section>
-        <h1 class = "title"><strong>Contact</strong></h1>
+        <h1 class = "title">Contact</h1>
         </header>
         <div class = "contacttext">
         <p class = "contactenglish"> Whatever your question is, please feel free to get in touch, and I will get back to you as soon as possible.</p>
+        
     <div class = "form">
-        <form action="https://formspree.io/f/mqkwvlnv" method="POST">
-            <p class = "contactind">First Name</p>
-            <input name = "name" type ="text" class = "form-control" placeholder = "First Name" required><br>
-            <p class = "contactind">Last Name</p>
-            <input name = "name" type ="text" class = "form-control" placeholder = "Last Name" required><br>
-            <p class = "contactind">Email</p>
-            <input name = "email" type = "email" class = "form-control" placeholder = "E-mail Address" required><br>
-            <p class = "contactind">Phone Number</p>
-            <input name = "phonenumber" type = "tel" class = "form-control" placeholder = "Phone Number" required><br>
-            <p class = "contactind">Message</p>
-            <textarea name = "message" class = "form-control" placeholder = "message" rows = "5" required></textarea><br>
-            <input type= "submit" class = "form-control-submit" value = "Contact Us!">
+        <form id="contact-form" action="https://formspree.io/f/mqkwvlnv" method="POST">
+            <div class="form-group">
+                <label for="firstname" class = "contactind">First Name</label>
+                <input id="firstname" name = "firstname" type ="text" class = "form-control" placeholder = "First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class = "contactind">Last Name</label>
+                <input id="lastname" name = "lastname" type ="text" class = "form-control" placeholder = "Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class = "contactind">Email</label>
+                <input id="email" name = "email" type = "email" class = "form-control" placeholder = "E-mail Address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone" class = "contactind">Phone Number</label>
+                <input id="phone" name = "phonenumber" type = "tel" class = "form-control" placeholder = "Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="message" class = "contactind">Message</label>
+                <textarea id="message" name = "message" class = "form-control" placeholder = "Tell us about your nutrition goals or questions..." rows = "5" required></textarea>
+            </div>
+            <input type= "submit" class = "form-control-submit" value = "Send Message">
         </form>
     </div>
         </div>
+        
+        <!-- Toast Notification -->
+        <div id="toast" class="toast">
+            <div class="toast-content">
+                <span class="toast-icon">✓</span>
+                <span class="toast-message">Message sent successfully! We'll get back to you soon.</span>
+            </div>
+        </div>
+        
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const form = this;
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showToast();
+                        form.reset();
+                    } else {
+                        showToast('error', 'Something went wrong. Please try again or call us directly.');
+                    }
+                })
+                .catch(error => {
+                    showToast('error', 'Something went wrong. Please try again or call us directly.');
+                });
+            });
+            
+            function showToast(type = 'success', message = 'Message sent successfully! We\'ll get back to you soon.') {
+                const toast = document.getElementById('toast');
+                const toastMessage = toast.querySelector('.toast-message');
+                
+                toastMessage.textContent = message;
+                toast.className = 'toast toast-' + type + ' toast-show';
+                
+                setTimeout(() => {
+                    toast.classList.remove('toast-show');
+                }, 5000);
+            }
+        </script>
         <footer>
+            <h2 class="footer-title">Leading a Life of Wellness</h2>
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Phone</h3>
+                    <p><a href="tel:267-368-9843">267-368-9843</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>2981 Welsh Rd, Suite 102 Philadelphia, PA 19152-1663</p>
+                    <p>Virtual & In-Person Consultations</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p>Saturday: By Appointment</p>
+                </div>
+            </div>
             <section>
                 
             <div class = "righthead">
@@ -60,5 +143,55 @@
         </section>
         <h4 class = "text">© 2024 Leading a Life of Wellness</h4>
         </footer>
+        <script>
+            // Mobile menu toggle
+            (function() {
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                const righthead = document.querySelector('.righthead');
+                const body = document.body;
+                
+                if (menuToggle && righthead) {
+                    menuToggle.addEventListener('click', function() {
+                        menuToggle.classList.toggle('active');
+                        righthead.classList.toggle('mobile-menu-open');
+                        body.classList.toggle('menu-open');
+                    });
+                    
+                    // Close menu when clicking on a link
+                    const navLinks = righthead.querySelectorAll('a');
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            menuToggle.classList.remove('active');
+                            righthead.classList.remove('mobile-menu-open');
+                            body.classList.remove('menu-open');
+                        });
+                    });
+                    
+                    // Close menu when clicking outside
+                    document.addEventListener('click', function(event) {
+                        if (righthead.classList.contains('mobile-menu-open') && 
+                            !righthead.contains(event.target) && 
+                            !menuToggle.contains(event.target)) {
+                            menuToggle.classList.remove('active');
+                            righthead.classList.remove('mobile-menu-open');
+                            body.classList.remove('menu-open');
+                        }
+                    });
+                }
+            })();
+            
+            // Mark active navigation link
+            (function() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.righthead a');
+                
+                navLinks.forEach(link => {
+                    const linkHref = link.getAttribute('href');
+                    if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                        link.classList.add('nav-active');
+                    }
+                });
+            })();
+        </script>
     </body>
 </html>

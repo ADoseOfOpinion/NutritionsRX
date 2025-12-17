@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Eye Health | NutritionsRX </title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+KR:wght@700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "../stylesheet.css">
@@ -10,8 +11,7 @@
         <header>
         <section>
                 <div class = "lefthead">
-                    <div class = "header"><img class = "logo" src = "../images/newlogo.jpg"></div>
-                    <div class = "header" id = "leading"><strong><h1>Leading a Life of Wellness</h1></strong></div>
+                    <div class = "header"><a href = "../index.html"><img class = "logo" src = "../images/newlogo.jpg" alt="NutritionsRX Logo"></a></div>
                 </div>
             <div class = "righthead">
                 <div class = "header"><a href = "../index.html"><h1>Home</h1></a></div>
@@ -19,7 +19,8 @@
                 <div class = "header"><a href = "../calculators.html"><h1>Nutrition Calculators</h1></a></div>
                 <div class = "header"><a href = "../blogs.html"><h1>Blogposts</h1></a></div>
                 <div class = "header"><a href = "../contact.html"><h1>Contact</h1></a></div>
-            
+                <div class = "header"><a href = "../policy.html"><h1>Policy</h1></a></div>
+                <div class = "header"><a href = "https://nutritionsrx.clientsecure.me/" target = "_blank" class = "hero-button-nav">Schedule Appointment</a></div>
             </div>
                 
         </section>
@@ -62,6 +63,22 @@
     
     
         <footer>
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Phone</h3>
+                    <p><a href="tel:267-368-9843">267-368-9843</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>Serving PA Residents</p>
+                    <p>Virtual & In-Person Consultations</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p>Saturday: By Appointment</p>
+                </div>
+            </div>
             <section>
                 
             <div class = "righthead">
@@ -78,7 +95,27 @@
         </section>
         <h4 class = "text">© 2024 Leading a Life of Wellness</h4>
         </footer>
+<script>
+    // Mark active navigation link
+    (function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.righthead a');
+        
+        navLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            // For blog post pages, mark "Blogposts" as active
+            if (currentPath.includes('Blogposts') && linkHref.includes('blogs.html')) { {
+                link.classList.add('nav-active');
+            } else {
+                // For other pages, match the current page
+                const currentPage = currentPath.split('/').pop() || 'index.html';
+                if (linkHref === currentPage || linkHref.endsWith('/' + currentPage)) {
+                    link.classList.add('nav-active');
+                }
+            }
+</script>
     
         </body>
         </html>       
-    
+    </body>
+</html>
