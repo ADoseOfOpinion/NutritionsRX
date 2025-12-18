@@ -1203,9 +1203,10 @@ footer .righthead a:hover h1 {
         align-items: stretch;
         padding: 70px 20px 30px 20px;
         z-index: 1003;
-        overflow-y: auto;
+        overflow-y: scroll;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transform: translateY(-100%);
         transition: transform 0.3s ease;
@@ -1239,6 +1240,7 @@ footer .righthead a:hover h1 {
         cursor: pointer !important;
         position: relative;
         z-index: 1003;
+        touch-action: auto !important;
     }
     
     /* Ensure all interactive elements in menu are clickable */
@@ -1247,6 +1249,7 @@ footer .righthead a:hover h1 {
         cursor: pointer !important;
         z-index: 1004 !important;
         position: relative;
+        touch-action: manipulation !important;
     }
     
     .righthead .header {
@@ -1290,15 +1293,30 @@ footer .righthead a:hover h1 {
         position: fixed;
         width: 100%;
         height: 100%;
+        touch-action: none;
     }
     
-    /* Ensure menu can scroll independently */
+    /* Ensure menu can scroll independently - critical for mobile */
     .righthead.mobile-menu-open {
-        overflow-y: auto !important;
+        overflow-y: scroll !important;
         overflow-x: hidden !important;
         -webkit-overflow-scrolling: touch !important;
         height: 100vh !important;
         max-height: 100vh !important;
+        touch-action: pan-y !important;
+        overscroll-behavior: contain !important;
+        will-change: scroll-position;
+    }
+    
+    /* Make sure menu container allows scrolling */
+    .righthead.mobile-menu-open .header {
+        flex-shrink: 0;
+        touch-action: manipulation !important;
+    }
+    
+    /* Ensure menu wrapper can receive touch events */
+    body.menu-open .righthead.mobile-menu-open {
+        touch-action: pan-y !important;
     }
     
     /* Light overlay - only dims content slightly */
